@@ -4,18 +4,27 @@ using ConceptsPOO;
 Console.WriteLine("POO Concepts");
 Console.WriteLine("==================");
 
-
-try
+Employee employee = new SalaryEmployee()
 {
-    Console.WriteLine(new Date(2024, 2, 29));
+    Id = 1010,
+    FirstName = "Juan",
+    LastName =  "Garcia",
+    BirthDate = new Date(1990, 5, 23),
+    HiringDate = new Date(2022, 1, 15),
+    IsActive = true,
+    Salary = 1500000.45M 
+};
+Console.WriteLine(employee);
 
-    Console.WriteLine(new Date(2022, 11, 31));
-
-    Console.WriteLine(new Date(2022, 3, 31));
-
-}
-catch (Exception error)
+Employee employee1 = new CommisionEmployee()
 {
-
-    Console.WriteLine(error.Message);
-}
+    Id = 2000,
+    FirstName = "Camilo",
+    LastName = "Zuñiga",
+    BirthDate = new Date(1998, 5, 9),
+    HiringDate = new Date(2022, 1, 15),
+    IsActive = true,
+    Sales = 500000000M,
+    Commisionpercentaje = 0.03F   
+};
+Console.WriteLine(employee1);
