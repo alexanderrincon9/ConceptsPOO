@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace ConceptsPOO
 {
-    public class CommisionEmployee : Employee
+    internal class HourlyEmployee : Employee
     {
-        public float Commisionpercentaje { get; set; }
+        public float Hours { get; set; }
 
-        public decimal Sales { get; set; }
-
+        public decimal HourValue { get; set; }
         public override decimal GetValueTopay()
         {
-            return Sales * (decimal)Commisionpercentaje;
+            return (decimal)Hours * HourValue;
         }
 
         public override string ToString()
         {
             return $"{ base.ToString()}" +
-                   $"\n\tCommision percentaje: {$"{Commisionpercentaje:P2}",20}" +
-                   $"\n\tSales...............: {$"{Sales:C2}",20}" +
+                   $"\n\tHours...............: {$"{Hours:N2}",20}" +
+                   $"\n\tHour value..........: {$"{HourValue:C2}",20}" +
                    $"\n\tValue to pay........: {$"{GetValueTopay():C2}",20}";
         }
     }
